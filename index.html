@@ -1,90 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>FindFling – Real Women Near You</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="description" content="Find local women looking for discreet fun right now.">
+  <title>FindFling</title>
+
+  <!-- Google Analytics -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-4RK11EWEJE'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4RK11EWEJE');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+  <link href="https://maturelovers.club/alecia/378f0dd4826e490864d2573ce6719e6e.static.css" rel="stylesheet"/>
+  <meta content="#ffffff" name="msapplication-TileColor"/>
+  <meta content="https://maturelovers.club/alecia/theme/australianlocals/images/favicon/ms-icon-144x144.png" name="msapplication-TileImage"/>
+
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #0a0a0a;
       font-family: Arial, sans-serif;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 15px;
-      line-height: 1.4;
-    }
-
-    .city-text {
-      font-size: 18px;
-      color: #ccc;
-      margin: 15px 0;
-    }
-
-    a.cta-button {
-      background-color: #cc0000;
       color: white;
-      padding: 15px 35px;
-      border-radius: 5px;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-top: 25px;
     }
 
-    a.cta-button:hover {
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://maturelovers.club/alecia/in_css_7b82a3f147c0b6b1b41b141976336713.static.jpg') no-repeat center top fixed;
+      animation: zoomInOut 4s infinite;
+      -webkit-animation: zoomInOut 4s infinite;
+      z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+      .background-image {
+        background-size: cover;
+      }
+    }
+
+    .btn-primary {
+      background-color: #cc0000;
+      padding: 15px 30px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      margin: 20px 0;
+      animation: pulse 2s infinite;
+    }
+
+    .btn-primary:hover {
       background-color: #990000;
     }
 
-    .note {
-      margin-top: 40px;
-      font-size: 12px;
-      color: #666;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .seo-description {
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    .city-message {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 25px;
+    }
+
+    .online-count {
+      text-align: center;
+      font-size: 16px;
+      opacity: 0.85;
+      margin-top: 10px;
+    }
+
+    .website-container {
+      padding-top: 60px;
+    }
+
+    .step-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 auto 20px;
+      max-width: 85%;
     }
   </style>
-
- <!-- Google tag (gtag.js) -->
-    <script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-4RK11EWEJE'></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-4RK11EWEJE');
-    </script>
-
 </head>
+
 <body>
+  <div class="background-image"></div>
+  <div class="website-container">
 
-  <h1>Women in your area want a fling tonight</h1>
+    <div class="step step_0" style="display: block;">
+      <div class="step-title">
+        FindFling: Ready to meet mature women in your area for something real?
+      </div>
 
-  <div class="city-text" id="location-message">Checking your location…</div>
+      <a href="https://bgfffig.hornylocls.com/s/63d00e240fcd5?subsource=FindFling">
+        <span class="btn-primary">Yes, show me who’s online</span>
+      </a>
 
-  <a href="https://bgfffig.hornylocls.com/s/63d00e240fcd5?subsource=FindFling" class="cta-button">View Profiles Now</a>
+      <div id="cityMessage" class="city-message">Finding active profiles near you...</div>
+      <div id="userCount" class="online-count">🔥 52 women are online now</div>
 
-  <div class="note">100% free to browse. Must be 18+.</div>
+      <div class="seo-description">
+        Meet real mature women near you who are looking for no-strings-attached encounters. 100% free to join and browse!
+      </div>
 
+      <div style="clear:both"></div>
+    </div>
+
+  </div>
+
+  <!-- Localização via IP -->
   <script>
     fetch("https://ipapi.co/json/")
       .then(res => res.json())
       .then(data => {
-        const city = data.city;
-        const message = city
-          ? `Hot, single women in ${city} are online now!`
-          : "Hot, single women are online now!";
-        document.getElementById('location-message').innerText = message;
+        const city = data.city || "your city";
+        document.getElementById("cityMessage").innerText = `Mature women in ${city} are waiting for you now.`;
       });
+  </script>
+
+  <!-- Contador falso de usuárias online -->
+  <script>
+    let count = 41;
+    setInterval(() => {
+      count += (Math.random() > 0.5 ? 1 : -1);
+      if (count < 30) count = 30;
+      if (count > 55) count = 55;
+      document.getElementById("userCount").innerText = `🔥 ${count} women are online now`;
+    }, 4000);
   </script>
 
 </body>
